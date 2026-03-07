@@ -18,54 +18,71 @@ Visualize results through an analytical dashboard.
 **Models Implemented**
 
 Five forecasting models were evaluated:
-Autoregressive Model – AR(5)
+
+Autoregressive Model – AR(5): 
 Captures linear relationships using previous price values.
-Moving Average Model
+
+Moving Average Model:
 Smooths the time series and captures short-term trends.
-Random Walk Model
+
+Random Walk Model:
 Used as a baseline model based on the Efficient Market Hypothesis.
-Random Forest Regressor
+
+Random Forest Regressor:
 Ensemble machine learning model capable of capturing non-linear patterns.
-Gradient Boosting Regressor
+
+Gradient Boosting Regressor:
 Sequential ensemble model designed to improve prediction accuracy through iterative error correction.
-Hybrid Model Approach
+
+Hybrid Model Approach:
 After comparing all models, the best-performing baseline model was combined with machine learning models to create a hybrid forecasting system.
 
 The hybrid approach works by:
 
 Modeling the linear component of the time series using AR(5).
+
 Learning the remaining non-linear patterns using machine learning models.
+
 Combining both components to generate the final prediction.
+
 This approach allows the model to capture both:
-linear market trends
+linear market trends,
 complex non-linear relationships present in financial data.
 
 **Validation Method**
 
 The models were evaluated using Walk-Forward Validation, which simulates real-world forecasting conditions.
 Process:
+
 Train the model on historical data up to a specific time.
+
 Predict the next time period.
+
 Expand the training window.
+
 Repeat until the end of the dataset.
+
 This method prevents data leakage and provides a realistic estimate of model performance.
+
 
 **Evaluation Metrics**
 
 Model performance was measured using the following error metrics:
-RMSE (Root Mean Squared Error) – Measures prediction accuracy.
-MAE (Mean Absolute Error) – Measures average absolute prediction error.
-MAPE (Mean Absolute Percentage Error) – Measures percentage prediction error.
-R² (Coefficient of Determination) – Indicates goodness of fit.
+
+RMSE (Root Mean Squared Error) – Measures prediction accuracy. 
+MAE (Mean Absolute Error) – Measures average absolute prediction error. 
+MAPE (Mean Absolute Percentage Error) – Measures percentage prediction error. 
+R² (Coefficient of Determination) – Indicates goodness of fit. 
 
 **Data**
 
 The dataset contains historical stock index data including:
-Date
-Opening price
-Closing price
-High
-Low
+
+Date, 
+Opening price, 
+Closing price, 
+High, 
+Low, 
 Volume
 
 The dataset was cleaned and sorted chronologically before model training.
@@ -74,20 +91,20 @@ The dataset was cleaned and sorted chronologically before model training.
 
 A Power BI dashboard was created to visualize model performance and compare forecasting accuracy across models.
 The dashboard displays:
-RMSE comparison
-MAPE comparison
-Model performance summary
+RMSE comparison, 
+MAPE comparison, 
+Model performance summary, 
 Best performing model identification
 
 **Technologies Used**
 
 Python Libraries
-Pandas
-NumPy
-Scikit-learn
-Statsmodels
-Matplotlib
-Visualization
+Pandas, 
+NumPy, 
+Scikit-learn, 
+Statsmodels, 
+Matplotlib, 
+Visualization, 
 Power BI
 
 **Key Findings**
@@ -97,7 +114,7 @@ Gradient Boosting achieved the best performance among the evaluated models.
 Hybridizing statistical and machine learning approaches improved forecasting capability by capturing both linear and non-linear patterns.
 
 **Future Improvements**
-Incorporate additional features such as macroeconomic indicators and technical indicators.
-Explore deep learning approaches such as LSTM for sequential data.
-Apply the hybrid framework to multiple financial markets.
+Incorporate additional features such as macroeconomic indicators and technical indicators. 
+Explore deep learning approaches such as LSTM for sequential data. 
+Apply the hybrid framework to multiple financial markets. 
 Implement real-time prediction pipelines.

@@ -7,10 +7,6 @@ A Comparative Study and Hybrid Forecasting Framework </H1>
 This project investigates the effectiveness of different statistical and machine learning models for stock market forecasting. The objective is to compare multiple forecasting approaches, identify the best-performing model, and enhance its predictive capability by integrating it with machine learning techniques.
 The study focuses on combining linear time-series modeling with non-linear machine learning methods to improve prediction accuracy for financial data.
 
-<h2> Dashboard Preview </h2>
-
-
-
 <h2> Project Objectives </h2>
 
 • Compare the performance of multiple forecasting models  
@@ -70,6 +66,18 @@ RMSE (Root Mean Squared Error) – Measures prediction accuracy.
 MAE (Mean Absolute Error) – Measures average absolute prediction error. 
 MAPE (Mean Absolute Percentage Error) – Measures percentage prediction error. 
 R² (Coefficient of Determination) – Indicates goodness of fit. 
+
+<h2> Dashboard Preview </h2>
+
+### Market Trend and Forecast
+![Market Trend](Market Trend + Forecast.png)
+
+### Model Comparison
+![Model Comparison](Model Comparison.png)
+
+### Walk Forward Validation
+![Walk Forward Validation](Walk Forward Validation.png)
+
 
 <h2> Data </h2>
 

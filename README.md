@@ -70,13 +70,13 @@ R² (Coefficient of Determination) – Indicates goodness of fit.
 <h2> Dashboard Preview </h2>
 
 ### Market Trend and Forecast
-![Market Trend](mtf.png)
+![Market Trend](images/mtf.png)
 
 ### Model Comparison
-![Model Comparison](mc.png)
+![Model Comparison](images/mc.png)
 
 ### Walk Forward Validation
-![Walk Forward Validation](wfv.png)
+![Walk Forward Validation](images/wfv.png)
 
 
 <h2> Data </h2>

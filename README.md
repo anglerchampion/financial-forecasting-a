@@ -1,4 +1,5 @@
-<H1> Machine Learning and Modelling Techniques for Financial Data Sciences: A Comparative Study and Hybrid Framework to predict Market Trends and Conduct Risk Analysis </H1>
+<H1> Machine Learning Models for Financial Market Forecasting
+A Comparative Study and Hybrid Forecasting Framework </H1>
 
 
 <h2> Overview </h2>
@@ -6,14 +7,18 @@
 This project investigates the effectiveness of different statistical and machine learning models for stock market forecasting. The objective is to compare multiple forecasting approaches, identify the best-performing model, and enhance its predictive capability by integrating it with machine learning techniques.
 The study focuses on combining linear time-series modeling with non-linear machine learning methods to improve prediction accuracy for financial data.
 
+<h2> Dashboard Preview </h2>
+
+
+
 <h2> Project Objectives </h2>
 
-Compare the performance of multiple forecasting models.
-Evaluate models using standard error metrics.
-Identify the best-performing baseline model.
-Develop a hybrid forecasting approach combining statistical and machine learning models.
-Validate model performance using walk-forward validation.
-Visualize results through an analytical dashboard.
+• Compare the performance of multiple forecasting models  
+• Evaluate models using standard error metrics  
+• Identify the best-performing baseline model  
+• Develop a hybrid forecasting framework  
+• Validate models using walk-forward validation  
+• Visualize results using an analytical dashboard
 
 <h2> Models Implemented </h2>
 
@@ -68,6 +73,8 @@ R² (Coefficient of Determination) – Indicates goodness of fit.
 
 <h2> Data </h2>
 
+Source - Kaggle - NIFTY 50 Historical Dataset
+
 The dataset contains historical stock index data including:
 
 Date, 
@@ -90,13 +97,14 @@ Best performing model identification
 
 <h2> Technologies Used </h2>
 
-Python Libraries
-Pandas, 
-NumPy, 
-Scikit-learn, 
-Statsmodels, 
-Matplotlib, 
-Visualization, 
+Python Libraries:
+• Pandas, 
+• NumPy, 
+• Scikit-learn, 
+• Statsmodels, 
+• Matplotlib
+
+Visualization:
 Power BI
 
 <h2> Key Findings </h2>

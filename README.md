@@ -78,6 +78,16 @@ R² (Coefficient of Determination) – Indicates goodness of fit.
 ### Walk Forward Validation
 ![Walk Forward Validation](images/wfv.png)
 
+The forecasting results are visualized using a Power BI analytical dashboard.
+
+Due to organizational restrictions, the dashboard cannot be publicly hosted.  
+However, the dashboard preview is provided below and the `.pbix` file is included in the repository.
+
+To view the full interactive dashboard:
+
+1. Download the `.pbix` file from the repository by going into the Dashboard folder.
+2. Open it using Microsoft Power BI Desktop
+
 
 <h2> Data </h2>
 

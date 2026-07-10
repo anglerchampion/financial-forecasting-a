@@ -1,138 +1,203 @@
-<H1> Machine Learning Models for Financial Market Forecasting
-A Comparative Study and Hybrid Forecasting Framework </H1>
+# Machine Learning Models for Financial Market Forecasting
+## A Comparative Study and Hybrid Forecasting Framework
 
+---
 
-<h2> Overview </h2>
+## Overview
 
-This project investigates the effectiveness of different statistical and machine learning models for stock market forecasting. The objective is to compare multiple forecasting approaches, identify the best-performing model, and enhance its predictive capability by integrating it with machine learning techniques.
-The study focuses on combining linear time-series modeling with non-linear machine learning methods to improve prediction accuracy for financial data.
+This project investigates statistical, machine learning, deep learning, and hybrid approaches for financial time-series forecasting using historical NIFTY-50 market data.
 
-<h2> Project Objectives </h2>
+The study follows a two-stage evaluation process. An initial benchmark compares seven forecasting approaches to identify promising candidate models to combine with the chosen machine learning models. These candidates are then evaluated using a rolling walk-forward validation framework that simulates real-world forecasting across multiple market regimes.
 
-• Compare the performance of multiple forecasting models  
-• Evaluate models using standard error metrics  
-• Identify the best-performing baseline model  
-• Develop a hybrid forecasting framework  
-• Validate models using walk-forward validation  
-• Visualize results using an analytical dashboard
+The primary contribution of this work is a hybrid residual-learning framework that combines linear autoregressive modeling with ensemble machine learning to improve forecasting stability while minimizing look-ahead bias.
 
-<h2> Models Implemented </h2>
+This project formed the basis of a research paper accepted for publication in the **Proceedings of the 9th IEEE International Conference on Computing Methodologies and Communication (ICCMC 2026).**
 
-Five forecasting models were evaluated:
+---
 
-<h3> Autoregressive Model – AR(5): </h3>
-Captures linear relationships using previous price values.
+# Project Objectives
 
-<h3> Moving Average Model: </h3>
-Smooths the time series and captures short-term trends.
+- Compare statistical and machine learning forecasting models.
+- Benchmark forecasting performance using standard evaluation metrics.
+- Develop a hybrid residual-learning forecasting framework.
+- Validate forecasting performance using rolling walk-forward validation.
+- Analyze model robustness across changing market conditions.
+- Visualize forecasting performance using an interactive Power BI dashboard.
 
-<h3> Random Walk Model: </h3>
-Used as a baseline model based on the Efficient Market Hypothesis.
+---
 
-<h3> Random Forest Regressor: </h3>
-Ensemble machine learning model capable of capturing non-linear patterns.
+# Dataset
 
-<h3> Gradient Boosting Regressor: </h3>
-Sequential ensemble model designed to improve prediction accuracy through iterative error correction.
+**Dataset:** NIFTY-50 Historical Data
 
-<h3> Hybrid Model Approach: </h3> 
-After comparing all models, the best-performing baseline model was combined with machine learning models to create a hybrid forecasting system.
+- **Period:** November 1995 – July 2023
+- **Observations:** 6,899 daily records
+- **Source:** Kaggle
 
-The hybrid approach works by: 
-Modeling the linear component of the time series using AR(5).
-Learning the remaining non-linear patterns using machine learning models. 
-Combining both components to generate the final prediction. 
-This approach allows the model to capture both: 
-linear market trends, 
-complex non-linear relationships present in financial data.
+The dataset contains the following attributes:
 
-<h2> Validation Method </h2>
+- Date
+- Open Price
+- High Price
+- Low Price
+- Close Price
+- Volume
 
-The models were evaluated using Walk-Forward Validation, which simulates real-world forecasting conditions.
-Process:
+The dataset was cleaned, standardized, and sorted chronologically prior to model development.
 
-Train the model on historical data up to a specific time.
-Predict the next time period.
-Expand the training window.
-Repeat until the end of the dataset.
-This method prevents data leakage and provides a realistic estimate of model performance.
+---
 
+# Forecasting Models
 
-<h2> Evaluation Metrics </h2>
+## Preliminary Benchmark
 
-Model performance was measured using the following error metrics:
+Seven forecasting approaches were initially benchmarked:
 
-RMSE (Root Mean Squared Error) – Measures prediction accuracy. 
-MAE (Mean Absolute Error) – Measures average absolute prediction error. 
-MAPE (Mean Absolute Percentage Error) – Measures percentage prediction error. 
-R² (Coefficient of Determination) – Indicates goodness of fit. 
+- Random Walk
+- Autoregressive Model (AR(5))
+- Moving Average
+- Random Forest
+- Gradient Boosting
+- Long Short-Term Memory (LSTM)
+- Hybrid Residual-Learning Framework
 
-<h2> Dashboard Preview </h2>
+The objective of this stage was to compare different forecasting paradigms and identify suitable candidate models for rigorous evaluation.
 
-### Market Trend and Forecast
+---
+
+## Hybrid Forecasting Framework
+
+The proposed forecasting framework consists of two stages.
+
+### Stage 1 — Linear Modeling
+
+An **Autoregressive AR(5)** model captures the linear component of the financial time series.
+
+### Stage 2 — Residual Learning
+
+The remaining forecasting error (residuals) is modeled using ensemble machine learning methods:
+
+- Random Forest
+- Gradient Boosting
+
+The final prediction is obtained by combining the autoregressive forecast with the predicted residual component.
+
+This approach enables the model to capture both:
+
+- Linear market dynamics
+- Non-linear market behaviour
+- Time-varying residual structure
+
+---
+
+# Walk-Forward Validation
+
+The primary evaluation uses a **rolling walk-forward validation** framework.
+
+Unlike conventional train-test splits, walk-forward validation retrains the forecasting model as new observations become available, closely simulating real-world forecasting.
+
+**Validation Period**
+
+- **2008 – 2022**
+- **15 yearly forecasting experiments**
+
+Each iteration follows the sequence:
+
+1. Train using all available historical observations.
+2. Forecast the following year.
+3. Expand the training window.
+4. Repeat until the end of the dataset.
+
+This methodology minimizes look-ahead bias while providing a realistic estimate of forecasting performance.
+
+---
+
+# Evaluation Metrics
+
+Model performance was evaluated using:
+
+- Root Mean Squared Error (RMSE)
+- Mean Absolute Error (MAE)
+- Mean Absolute Percentage Error (MAPE)
+- Directional Accuracy
+- Coefficient of Determination (R²)
+
+The preliminary benchmark reports all evaluation metrics, while the walk-forward validation primarily focuses on RMSE, MAPE, and Directional Accuracy across yearly forecasting windows.
+
+---
+
+# Dashboard Preview
+
+## Market Trend and Forecast
+
 ![Market Trend](images/mtf.png)
 
-### Model Comparison
+## Model Comparison
+
 ![Model Comparison](images/mc.png)
 
-### Walk Forward Validation
+## Walk-Forward Validation
+
 ![Walk Forward Validation](images/wfv.png)
 
-The forecasting results are visualized using a Power BI analytical dashboard.
+The repository includes an interactive **Microsoft Power BI** dashboard that summarizes:
 
-Due to organizational restrictions, the dashboard cannot be publicly hosted.  
-However, the dashboard preview is provided below and the `.pbix` file is included in the repository.
+- Historical market trends
+- Forecast comparison
+- Walk-forward validation performance
+- Model evaluation metrics
 
-To view the full interactive dashboard:
+The `.pbix` dashboard file is available in the **Dashboard** directory.
 
-1. Download the `.pbix` file from the repository by going into the Dashboard folder.
-2. Open it using Microsoft Power BI Desktop
+---
 
+# Technologies Used
 
-<h2> Data </h2>
+## Programming Language
 
-Source - Kaggle - NIFTY 50 Historical Dataset
+- Python
 
-The dataset contains historical stock index data including:
+## Libraries
 
-Date, 
-Opening price, 
-Closing price, 
-High, 
-Low, 
-Volume
+- Pandas
+- NumPy
+- Statsmodels
+- Scikit-learn
+- TensorFlow
+- Matplotlib
 
-The dataset was cleaned and sorted chronologically before model training.
+## Visualization
 
-<h2> Dashboard </h2>
+- Microsoft Power BI
 
-A Power BI dashboard was created to visualize model performance and compare forecasting accuracy across models.
-The dashboard displays:
-RMSE comparison, 
-MAPE comparison, 
-Model performance summary, 
-Best performing model identification
+---
 
-<h2> Technologies Used </h2>
+# Key Findings
 
-Python Libraries:
-• Pandas, 
-• NumPy, 
-• Scikit-learn, 
-• Statsmodels, 
-• Matplotlib
+- Benchmarked seven statistical, machine learning, deep learning, and hybrid forecasting approaches using historical NIFTY-50 market data.
+- Developed a hybrid residual-learning framework that combines autoregressive modeling with ensemble machine learning.
+- Evaluated forecasting robustness using rolling walk-forward validation across **15 years (2008–2022)** under varying market conditions.
+- Demonstrated stable forecasting performance of the hybrid framework while minimizing look-ahead bias through realistic sequential evaluation.
+- Highlighted the benefits of combining statistical time-series methods with machine learning for financial forecasting.
 
-Visualization:
-Power BI
+---
 
-<h2> Key Findings </h2>
+# Research Publication
 
-Machine learning models demonstrated lower prediction error compared to traditional statistical models.
-Gradient Boosting achieved the best performance among the evaluated models.
-Hybridizing statistical and machine learning approaches improved forecasting capability by capturing both linear and non-linear patterns.
+**Machine Learning and Modelling Techniques for Financial Data Sciences: A Comparative Study and Hybrid Model Framework for Stock Market Prediction**
 
-<h2> Future Improvements </h2>
-Incorporate additional features such as macroeconomic indicators and technical indicators. 
-Explore deep learning approaches such as LSTM for sequential data. 
-Apply the hybrid framework to multiple financial markets. 
-Implement real-time prediction pipelines.
+*Kashyap Madhav Yeleswarapu, Kshama S. B.*
+
+Accepted for publication in the **Proceedings of the 9th IEEE International Conference on Computing Methodologies and Communication (ICCMC 2026)**.
+
+---
+
+# Future Work
+
+Potential extensions of this work include:
+
+- Incorporating macroeconomic and technical indicators.
+- Evaluating Transformer-based forecasting architectures.
+- Extending the framework to multiple financial markets and asset classes.
+- Investigating probabilistic forecasting techniques.
+- Developing real-time forecasting and deployment pipelines.

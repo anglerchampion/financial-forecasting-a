@@ -1,7 +1,7 @@
 # Machine Learning Models for Financial Market Forecasting
 ## A Comparative Study and Hybrid Forecasting Framework
 
----
+
 
 ## Overview
 
@@ -13,7 +13,7 @@ The primary contribution of this work is a hybrid residual-learning framework th
 
 This project formed the basis of a research paper accepted for publication in the **Proceedings of the 9th IEEE International Conference on Computing Methodologies and Communication (ICCMC 2026).**
 
----
+
 
 # Project Objectives
 
@@ -24,7 +24,7 @@ This project formed the basis of a research paper accepted for publication in th
 - Analyze model robustness across changing market conditions.
 - Visualize forecasting performance using an interactive Power BI dashboard.
 
----
+
 
 # Dataset
 
@@ -45,7 +45,7 @@ The dataset contains the following attributes:
 
 The dataset was cleaned, standardized, and sorted chronologically prior to model development.
 
----
+
 
 # Forecasting Models
 
@@ -63,7 +63,7 @@ Seven forecasting approaches were initially benchmarked:
 
 The objective of this stage was to compare different forecasting paradigms and identify suitable candidate models for rigorous evaluation.
 
----
+
 
 ## Hybrid Forecasting Framework
 
@@ -88,7 +88,7 @@ This approach enables the model to capture both:
 - Non-linear market behaviour
 - Time-varying residual structure
 
----
+
 
 # Walk-Forward Validation
 
@@ -110,7 +110,7 @@ Each iteration follows the sequence:
 
 This methodology minimizes look-ahead bias while providing a realistic estimate of forecasting performance.
 
----
+
 
 # Evaluation Metrics
 
@@ -124,7 +124,7 @@ Model performance was evaluated using:
 
 The preliminary benchmark reports all evaluation metrics, while the walk-forward validation primarily focuses on RMSE, MAPE, and Directional Accuracy across yearly forecasting windows.
 
----
+
 
 # Dashboard Preview
 
@@ -149,7 +149,7 @@ The repository includes an interactive **Microsoft Power BI** dashboard that sum
 
 The `.pbix` dashboard file is available in the **Dashboard** directory.
 
----
+
 
 # Technologies Used
 
@@ -170,7 +170,7 @@ The `.pbix` dashboard file is available in the **Dashboard** directory.
 
 - Microsoft Power BI
 
----
+
 
 # Key Findings
 
@@ -180,7 +180,7 @@ The `.pbix` dashboard file is available in the **Dashboard** directory.
 - Demonstrated stable forecasting performance of the hybrid framework while minimizing look-ahead bias through realistic sequential evaluation.
 - Highlighted the benefits of combining statistical time-series methods with machine learning for financial forecasting.
 
----
+
 
 # Research Publication
 
@@ -190,7 +190,7 @@ The `.pbix` dashboard file is available in the **Dashboard** directory.
 
 Accepted for publication in the **Proceedings of the 9th IEEE International Conference on Computing Methodologies and Communication (ICCMC 2026)**.
 
----
+
 
 # Future Work
 
